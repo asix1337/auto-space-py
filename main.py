@@ -31,7 +31,7 @@ if __name__ == "__main__":
             print('Stopped.')
         is_active = not is_active
 
-    print('Ready. Press "{0}" to start. Press "{0}" again to stop. Press CTRL+C to Exit.'.format('DEL'))
+    print('Ready. Press {0} key to start. Press {0} key again to stop. Press CTRL+C to Exit.'.format('DEL'))
     keyboard.add_hotkey('del', x)
     try:
         keyboard.wait()
