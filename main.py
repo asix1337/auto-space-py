@@ -13,7 +13,7 @@ def task():
         keyboard.release('space')
 
 
-if __name__ == "__main__":
+def main():
     thread = None
     is_active = False
 
@@ -37,3 +37,7 @@ if __name__ == "__main__":
         keyboard.wait()
     except KeyboardInterrupt:
         print('Exit.')
+
+
+if __name__ == "__main__":
+    main()
