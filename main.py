@@ -9,12 +9,13 @@ def task():
     t = threading.currentThread()
     while getattr(t, 'do_run', True):
         keyboard.press('space')
-        time.sleep(random.uniform(0.05, 0.15))
+        time.sleep(random.uniform(0.05, 0.1))
         keyboard.release('space')
 
 
 def main():
-    thread = None
+    global thread
+    global is_active
     is_active = False
 
     def x():
@@ -23,7 +24,7 @@ def main():
         if not is_active:
             thread = threading.Thread(target=task)
             thread.start()
-            print('Started with a interval between 0.05 and 0.15 seconds.')
+            print('Started with a interval between 0.05 and 0.1 seconds.')
         else:
             thread.do_run = False
             thread.join()
