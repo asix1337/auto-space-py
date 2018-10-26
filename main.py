@@ -1,6 +1,7 @@
 import random
 import threading
 import time
+import winsound
 
 import keyboard
 
@@ -29,10 +30,11 @@ def main():
             thread.do_run = False
             thread.join()
             del thread
+            winsound.Beep(1500, 150)
             print('Stopped.')
         is_active = not is_active
 
-    print('Ready. Press {0} key to start. Press {0} key again to stop. Press CTRL+C to Exit.'.format('DEL'))
+    print('Press {0} key to start. Press {0} key again to stop. Press CTRL+C to Exit.'.format('DEL'))
     keyboard.add_hotkey('del', x)
     try:
         keyboard.wait()
